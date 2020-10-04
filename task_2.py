@@ -27,5 +27,31 @@ def min_integer_one(lst_obj):
 
 my_list = [95,85,69,2,8,31,1,5,9]
 min_int = min_integer_one(my_list)
-
 print(min_int)
+
+# Сложность О(N^2)
+
+def min_integer_two(lst_obj_1):
+
+    lst_copy = lst_obj_1[0]
+    for el in lst_obj_1:
+        if el < lst_copy : lst_copy = el
+    return lst_copy
+
+
+my_list = [95,85,69,2,8,31,1,5,9]
+min_int_1 = min_integer_two(my_list)
+print(min_int_1)
+
+
+
+
+
+
+
+
+
+
+
+
+
