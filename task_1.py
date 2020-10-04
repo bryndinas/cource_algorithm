@@ -62,7 +62,7 @@ def check_3(lst_obj):
     lst_copy = list(lst_obj)                 # О(1)
     lst_copy.sort()                          # О(N log N)
     for i in range(len(lst_obj) - 1):        # О(N)
-        if lst_copy[i] == lst_copy[i+1]:     # О(1)
+        if lst_copy[i] == lst_copy[i+1]:     # О(N)
             return False                     # О(1)
     return True                              # О(1)
 
