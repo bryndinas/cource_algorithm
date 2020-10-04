@@ -22,3 +22,16 @@
 Реализуйте поиск трех компаний с наибольшей годовой прибылью.
 Выведите результат.
 """
+
+company_1 = {'bmw': 150000}
+company_2 = {'audi': 100000}
+company_3 = {'volvo': 50000}
+
+def max_profit (x,y,z):
+    return min(min(x.values()), min(y.values()), min(z.values()))
+
+com = max_profit(company_1,company_2,company_3)
+print(com)
+
+
+
