@@ -42,16 +42,3 @@ def min_integer_two(lst_obj_1):
 my_list = [95,85,69,2,8,31,1,5,9]
 min_int_1 = min_integer_two(my_list)
 print(min_int_1)
-
-
-
-
-
-
-
-
-
-
-
-
-
