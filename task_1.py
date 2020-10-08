@@ -1,17 +1,33 @@
-def cal (oper,int_1,int_2):
-    oper = input('Введите знак операции')
-    int_1 = int(input('Введите первое число'))
-    int_2 = int(input('Введите второе число'))
-    if oper == 0:
-        return print('Выход')
-    elif oper == '+':
-        return print(int_1+int_2)
-    elif oper == '-':
-        return print(int_1-int_2)
-    elif oper == '*':
-        return print(int_1*int_2)
-    elif oper == '/':
-        return print(int_1/int_2)
+def get_param(first:bool=True):
+    try:
+        if first:
+            param = int(input('Введите первое число\n'))
+        else:
+            param = int(input('Введите второе число\n'))
+    except ValueError:
+        print('Вы вместо трехзначного числа ввели строку (((. Исправьтесь\n')
+        return get_param(first=first)
+    return param
 
-a = (cal(1,2,3))
-print(a)
+def func():
+    oper = input('Введите знак операции или 0 для выхода\n')
+    if oper in '+-*/':
+        try:
+            result = eval(
+                oper.join([
+                    str(get_param(first=True)), str(get_param(first=False))
+                ])
+            )
+            print('Ваш результат {0}'.format(result))
+        except ZeroDivisionError:
+            print('Нельзя делить на ноль')
+        finally:
+            return func()
+    elif operation == '0':
+        return "Завершение программы"
+    else:
+        print('Вы ошиблись в вводимом знаке операции')
+        return func()
+
+if __name__ == "__main__":
+    func()
